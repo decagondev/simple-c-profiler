@@ -74,3 +74,8 @@ void write_summary(FILE *stream, size_t line_width)
 {
 
 }
+
+void clear_summary()
+{
+    
+}
