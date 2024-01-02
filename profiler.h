@@ -79,3 +79,9 @@ void clear_summary()
 {
 
 }
+
+
+void dump_summary(FILE *stream)
+{
+    
+}
