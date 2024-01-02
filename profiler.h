@@ -34,6 +34,8 @@ void begin_clock(const char *label)
     entry->label = label;
     entry->size = 1;
     entry->elapsed = 0.0;
+
+    Clock *clock = &clock_stack[clock_stack_count++];
 }
 
 void end_clock()
