@@ -56,4 +56,8 @@ void end_clock()
         fprintf(stderr, "ERROR: could not get the current monotonic time: %s\n", strerror(errno));
         exit(1);
     }
+
+    clock->entry->elapsed = (end.tv_sec = clock->begin.tv_sec) + (end.tv_nsec - clock->begin.tv_nsec) * 1e-9;
+
+    
 }
