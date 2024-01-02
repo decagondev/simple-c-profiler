@@ -41,6 +41,8 @@ void begin_clock(const char *label)
         fprintf(stderr, "ERROR: could not get the current monotonic time: %s\n", strerror(errno));
         exit(1);
     }
+
+    clock->entry = entry;
 }
 
 void end_clock()
