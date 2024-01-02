@@ -92,6 +92,17 @@ void establish_entry_line_width(ptrdiff_t root, size_t level)
 {
     size_t line_width = 2 * level + strlen(summary[root].label);
     ptrdiff_t child = root + 1;
+
+     while (size > 0) {
+        size_t entry_line_width = establish_entry_line_width( child, level + 1);
+
+        if (entry_line_width > line_width) {
+            line_width = entry_line_width;
+        }
+        
+        size -= summary[child].size;
+        child += summary[child].size;
+    }
 }
 
 void establish_line_width()
