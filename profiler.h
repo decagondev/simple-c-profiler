@@ -91,6 +91,7 @@ void write_summary(FILE *stream, size_t line_width)
 void establish_entry_line_width(ptrdiff_t root, size_t level)
 {
     size_t line_width = 2 * level + strlen(summary[root].label);
+    ptrdiff_t child = root + 1;
 }
 
 void establish_line_width()
