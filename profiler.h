@@ -29,6 +29,11 @@ void begin_clock(const char *label)
 {
     assert(clock_stack_count < CLOCK_STACK_CAPACITY);
     assert(summary_count < SUMMARY_CAPACITY);
+
+    Entry *entry = &summary[summary_count++];
+    entry->label = label;
+    entry->size = 1;
+    entry->elapsed = 0.0;
 }
 
 void end_clock()
