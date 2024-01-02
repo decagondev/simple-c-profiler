@@ -109,14 +109,17 @@ size_t establish_entry_line_width(ptrdiff_t root, size_t level)
 size_t establish_line_width()
 {
     size_t line_width = 0;
+    ptrdiff_t root = 0;
 
-
-
-
-
-
+    while ((size_t) root < summary_count) {
+        size_t entry_line_width = establish_entry_line_width(root, 0);
+        if (entry_line_width > line_width) {
+            line_width = entry_line_width;
+        }
+        root += summary[root].size;
+    }
+    
     return line_width;
-
 }
 
 void clear_summary()
