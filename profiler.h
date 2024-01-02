@@ -77,6 +77,11 @@ void write_summary(FILE *stream, size_t line_width)
 
 void establish_entry_line_width(ptrdiff_t root, size_t level)
 {
+
+}
+
+void establish_line_width()
+{
     
 }
 
