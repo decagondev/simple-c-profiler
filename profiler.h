@@ -27,7 +27,8 @@ size_t summanry_count = 0;
 
 void begin_clock(const char *label)
 {
-
+    assert(clock_stack_count < CLOCK_STACK_CAPACITY);
+    assert(summary_count < SUMMARY_CAPACITY);
 }
 
 void end_clock()
