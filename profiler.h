@@ -113,7 +113,8 @@ void establish_line_width()
 
 void clear_summary()
 {
-
+    clock_stack_count = 0;
+    summanry_count = 0;
 }
 
 
