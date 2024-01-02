@@ -70,7 +70,12 @@ void write_entry(FILE *stream, ptrdiff_t root, size_t level, size_t line_width)
     fprintf(stream, "%*s%-*s%.9lf secs\n", (int) level * 2, "", (int) line_width - (int) level * 2, summary[root].label, summary[root].elapsed);
     size_t size = summary[root].size - 1;
     ptrdiff_t child = root + 1;
-    
+
+    while (size > 0) {
+        write_entry(stream, child, level + 1, line_width);
+        size -= summary[child].size;
+        child += summary[child].size;
+    }
 }
 
 void write_summary(FILE *stream, size_t line_width)
