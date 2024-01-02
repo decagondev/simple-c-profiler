@@ -80,7 +80,12 @@ void write_entry(FILE *stream, ptrdiff_t root, size_t level, size_t line_width)
 
 void write_summary(FILE *stream, size_t line_width)
 {
+     ptrdiff_t root = 0;
 
+    while ((size_t) root < summary_count) {
+        write_entry(stream, root, 0, line_width);
+        root += summary[root].size;
+    }
 }
 
 void establish_entry_line_width(ptrdiff_t root, size_t level)
