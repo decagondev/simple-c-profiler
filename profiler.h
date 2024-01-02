@@ -68,6 +68,9 @@ void end_clock()
 void write_entry(FILE *stream, ptrdiff_t root, size_t level, size_t line_width)
 {
     fprintf(stream, "%*s%-*s%.9lf secs\n", (int) level * 2, "", (int) line_width - (int) level * 2, summary[root].label, summary[root].elapsed);
+    size_t size = summary[root].size - 1;
+    ptrdiff_t child = root + 1;
+    
 }
 
 void write_summary(FILE *stream, size_t line_width)
