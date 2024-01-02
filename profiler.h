@@ -132,7 +132,9 @@ void clear_summary()
 void dump_summary(FILE *stream)
 {
     size_t line_width = establish_line_width();
-    
+
+    write_summary(stream, line_width + 2);
+    clear_summary();    
 }
 
 #else
