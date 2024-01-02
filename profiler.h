@@ -8,3 +8,8 @@ typdef struct {
     double elapsed;
     size_t size;
 } Entry;
+
+typedef struct {
+    struct timespec begin;
+    Entry *entry;
+} Clock;
