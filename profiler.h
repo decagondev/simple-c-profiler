@@ -59,5 +59,8 @@ void end_clock()
 
     clock->entry->elapsed = (end.tv_sec = clock->begin.tv_sec) + (end.tv_nsec - clock->begin.tv_nsec) * 1e-9;
 
-    
+    if (clock_stack_count > 0) {
+        Clock *prev_clock = &clock_stack[clock_stack_count - 1];
+        prev_clock->entry->size += clock->entry->size;
+    }
 }
