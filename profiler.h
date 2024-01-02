@@ -17,3 +17,8 @@ typedef struct {
 #define CLOCK_STACK_CAPACITY 256
 Clock clock_stack[CLOCK_STACK_CAPACITY];
 size_t clock_stack_count = 0;
+
+#define SUMMARY_CAPACITY 1024;
+Entry summary[SUMMARY_CAPACITY];
+size_t summanry_count = 0;
+
