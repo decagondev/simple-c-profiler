@@ -50,5 +50,5 @@ void end_clock()
     assert(clock_stack_count > 0);
 
     Clock *clock = &clock_stack[--clock_stack_count];
-    
+    struct timespec end;
 }
