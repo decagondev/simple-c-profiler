@@ -106,8 +106,16 @@ size_t establish_entry_line_width(ptrdiff_t root, size_t level)
     return line_width;
 }
 
-void establish_line_width()
+size_t establish_line_width()
 {
+    size_t line_width = 0;
+
+
+
+
+
+
+    return line_width;
 
 }
 
