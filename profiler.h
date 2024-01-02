@@ -64,3 +64,8 @@ void end_clock()
         prev_clock->entry->size += clock->entry->size;
     }
 }
+
+void write_entry(FILE *stream, ptrdiff_t root, size_t level, size_t line_width)
+{
+
+}
