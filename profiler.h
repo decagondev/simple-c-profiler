@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stddef.h>
 
+#ifdef PROFILE
 
 typdef struct {
     const char *label;
@@ -22,3 +23,14 @@ size_t clock_stack_count = 0;
 Entry summary[SUMMARY_CAPACITY];
 size_t summanry_count = 0;
 
+// =========== Implementation ==============
+
+void begin_clock(const char *label)
+{
+
+}
+
+void end_clock()
+{
+
+}
