@@ -33,5 +33,5 @@ void begin_clock(const char *label)
 
 void end_clock()
 {
-
+    assert(clock_stack_count > 0);
 }
