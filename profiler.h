@@ -36,6 +36,11 @@ void begin_clock(const char *label)
     entry->elapsed = 0.0;
 
     Clock *clock = &clock_stack[clock_stack_count++];
+
+    if (clock_gettime(CLOCK_MONOTONIC, &c->begin) < 0) {
+        fprintf(stderr, "ERROR: could not get the current monotonic time: %s\n", strerror(errno));
+        exit(1);
+    }
 }
 
 void end_clock()
