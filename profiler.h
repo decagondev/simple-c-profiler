@@ -51,4 +51,9 @@ void end_clock()
 
     Clock *clock = &clock_stack[--clock_stack_count];
     struct timespec end;
+
+    if (clock_getTime(CLOCK_MONOTONIC, &end) < 0) {
+        fprintf(stderr, "ERROR: could not get the current monotonic time: %s\n", strerror(errno));
+        exit(1);
+    }
 }
