@@ -69,3 +69,8 @@ void write_entry(FILE *stream, ptrdiff_t root, size_t level, size_t line_width)
 {
 
 }
+
+void write_summary(FILE *stream, size_t line_width)
+{
+
+}
